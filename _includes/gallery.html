@@ -1,0 +1,10 @@
+{% if page.gallery %}
+	<section class="gallery">
+		{% for image in page.gallery %}
+			<figure>
+				<img src="{{ image.file }}">
+				<figcaption>{{ image.title }}</figcaption>
+			</figure>
+		{% endfor %}
+	</section>
+{% endif %}

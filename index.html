@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<header>
+	<h1>{{ site.title }}</h1>
+</header>
+<section>
+	<article>
+		<p>This site is made in <a href="https://jekyllrb.com">Jekyll</a>, a popular CMS/static site generator. It is <em>great</em> for simple templating and content management.</p>
+		<p>We’ll demonstrate a few of these basic, powerful uses here, such that you can adapt them to your projects.</p>
+	</article>
+</section>
+<section>
+	<h2>Work</h2>
+	<ul class="grid">
+		{% assign works = site.pages | where: "layout", "work" | sort: "order" %}
+		{% for work in works %}
+			<li>
+				<a href="{{ work.url | relative_url }}">
+					<img src="{{work.url | relative_url }}{{work.preview}}" />
+					<p>{{ work.title }}</p>					
+				</a>
+			</li>
+		{% endfor %}
+	</ul>
+</section>
